@@ -678,4 +678,583 @@
             animation: slideIn 0.5s ease;
         }
 
-        .licenses-list
+        .licenses-list.active {
+            display: block;
+        }
+
+        .license-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--gradient);
+            color: white;
+            border-radius: 20px;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        /* Interactive Elements */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-light);
+        }
+
+        .faq-answer {
+            background: white;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Services Section Styles */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--gray-light);
+        }
+
+        .services-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .service-header {
+            padding: 1.5rem;
+            background: var(--gradient);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .service-content {
+            max-height: 2000px;
+            overflow: visible;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .service-content.active {
+            max-height: 2000px;
+            display: block;
+        }
+
+        .service-form {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .error-message {
+            color: var(--accent);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .required {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Tax<span>Harbor</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Navigate Your Taxes with Confidence</h1>
+            <p>Discover hidden tax credits and maximize your deductions with our expert guidance</p>
+            <a href="#contact" class="btn btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-search-dollar feature-icon"></i>
+                <h3>Tax Credit Discovery</h3>
+                <p>We analyze your unique situation to uncover every possible tax credit and deduction you qualify for.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3>Compliance Assurance</h3>
+                <p>Stay compliant while maximizing your returns with our expert guidance and thorough documentation.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line feature-icon"></i>
+                <h3>Strategic Planning</h3>
+                <p>Get personalized tax strategies that align with your financial goals and business growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="process-container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">How It Works</h2>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Initial Consultation</h3>
+                    <p>We review your current tax situation and identify opportunities for optimization.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Strategy Development</h3>
+                    <p>Our experts create a customized plan to maximize your tax benefits.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Implementation</h3>
+                    <p>We guide you through the process and handle all the necessary documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="services-container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Our Services</h2>
+            
+            <!-- Tax Preparation Service -->
+            <div class="service-card scroll-reveal">
+                <div class="service-header" onclick="toggleService(this)">
+                    <h3>Tax Preparation</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="service-content">
+                    <form class="service-form" onsubmit="handleSubmit(event, 'tax-prep')">
+                        <div class="form-group">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tax Filing Status</label>
+                            <select name="filing-status">
+                                <option value="">Select an option</option>
+                                <option value="single">Single</option>
+                                <option value="married-joint">Married Filing Jointly</option>
+                                <option value="married-separate">Married Filing Separately</option>
+                                <option value="head">Head of Household</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Previous Year Tax Return Available?</label>
+                            <select name="previous-return">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Request Tax Preparation</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Credit Repair Service -->
+            <div class="service-card scroll-reveal">
+                <div class="service-header" onclick="toggleService(this)">
+                    <h3>Credit Repair</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="service-content">
+                    <form class="service-form" onsubmit="handleSubmit(event, 'credit-repair')">
+                        <div class="form-group">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Current Credit Score Range</label>
+                            <select name="credit-score">
+                                <option value="">Select an option</option>
+                                <option value="300-499">300-499</option>
+                                <option value="500-599">500-599</option>
+                                <option value="600-699">600-699</option>
+                                <option value="700+">700+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Credit Concern</label>
+                            <select name="credit-concern">
+                                <option value="">Select an option</option>
+                                <option value="late-payments">Late Payments</option>
+                                <option value="collections">Collections</option>
+                                <option value="high-utilization">High Credit Utilization</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Request Credit Repair</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Financial Consultation Service -->
+            <div class="service-card scroll-reveal">
+                <div class="service-header" onclick="toggleService(this)">
+                    <h3>Financial Consultation</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="service-content">
+                    <form class="service-form" onsubmit="handleSubmit(event, 'financial-consultation')">
+                        <div class="form-group">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Financial Goal</label>
+                            <select name="financial-goal">
+                                <option value="">Select an option</option>
+                                <option value="retirement">Retirement Planning</option>
+                                <option value="investment">Investment Strategy</option>
+                                <option value="debt">Debt Management</option>
+                                <option value="business">Business Planning</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Consultation Time</label>
+                            <select name="preferred-time">
+                                <option value="">Select an option</option>
+                                <option value="morning">Morning (9AM - 12PM)</option>
+                                <option value="afternoon">Afternoon (12PM - 4PM)</option>
+                                <option value="evening">Evening (4PM - 6PM)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Request Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-container">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Meet Our Leadership</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Tax Harbor was founded by two visionary women committed to revolutionizing tax planning and financial services.</p>
+            
+            <div class="team-grid">
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo">
+                        <img src="/api/placeholder/220/220" alt="Co-founder" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Tashae Edwards</h3>
+                        <p class="member-title">Co-Founder & Financial Advisor</p>
+                        <p class="member-bio">With 8 years of experience in financial services, Tashae brings exceptional expertise in tax optimization and wealth building strategies. Her client-focused approach has helped hundreds achieve their financial goals while maximizing tax benefits.</p>
+                        <div class="member-credentials">
+                            <span class="credential-tag">Series 7</span>
+                            <span class="credential-tag">Series 66</span>
+                            <span class="credential-tag">Life & Health</span>
+                            <span class="credential-tag">Property & Casualty</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member scroll-reveal">
+                    <div class="member-photo">
+                        <img src="/api/placeholder/220/220" alt="Founder" style="object-fit: cover;">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Lene Small</h3>
+                        <p class="member-title">Founder & Tax-Credit Strategist</p>
+                        <p class="member-bio">Lene's innovative approach to tax credit optimization has revolutionized how businesses and individuals approach tax planning. Her expertise ensures clients maximize available credits while maintaining perfect compliance.</p>
+                        <div class="member-credentials">
+                            <span class="credential-tag">Tax Credit Specialist</span>
+                            <span class="credential-tag">Strategic Planning</span>
+                            <span class="credential-tag">Business Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq scroll-reveal">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>What makes Tax Harbor different?</h3>
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Our female-led team brings a unique perspective to tax planning, combining deep financial expertise with a client-first approach. Under the leadership of Tashae Edwards and Lene Small, we offer comprehensive strategies that go beyond basic tax preparation, focusing on maximizing tax credits and building long-term wealth.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>How can I maximize my tax benefits?</h3>
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We conduct a thorough analysis of your financial situation to identify every possible tax credit and deduction. Our team stays current with tax law changes to ensure you never miss an opportunity to save.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>What industries do you serve?</h3>
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We work with clients across various industries, from small businesses to individual professionals. Our expertise spans multiple sectors, allowing us to provide tailored tax strategies for your specific situation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Optimize Your Tax Strategy?</h2>
+            <p>Join thousands of satisfied clients who have maximized their tax benefits with Tax Harbor.</p>
+            <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tax Harbor</h3>
+                <p>Your trusted partner in tax optimization and financial growth.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> (929) 564-3938</li>
+                    <li><i class="fas fa-envelope"></i> thetaxharbor@gmail.com</li>
+                    <li><i class="fas fa-location-dot"></i> 56 Franklin Ave Suite 19, Brooklyn, NY 11205</li>
+                </ul>
+            </div>
+        </div>
+        </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        const scrollElements = document.querySelectorAll('.scroll-reveal');
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+
+        // FAQ Toggles
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+            });
+        });
+
+        // Team Member License Toggle
+        document.querySelectorAll('.team-member').forEach(member => {
+            member.addEventListener('click', () => {
+                const licenses = member.querySelector('.licenses-list');
+                licenses.classList.toggle('active');
+            });
+        });
+
+        // Service Form Toggles
+        function toggleService(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('i');
+            
+            // Close all other services
+            document.querySelectorAll('.service-content').forEach(item => {
+                if (item !== content && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                    item.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                }
+            });
+
+            // Toggle current service
+            content.classList.toggle('active');
+            if (content.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        // Form Submission Handler
+        function handleSubmit(event, serviceType) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+            
+            // Add service type to the data
+            data.serviceType = serviceType;
+            
+            // Here you would typically send this data to your server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your interest! We will contact you shortly.');
+            
+            // Reset form
+            form.reset();
+            
+            // Close the service section
+            const content = form.closest('.service-content');
+            content.classList.remove('active');
+            const icon = content.previousElementSibling.querySelector('i');
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    </script>
+</body>
+</html>
